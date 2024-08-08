@@ -1,0 +1,19 @@
+---
+title: "A translation of Super Star Trek to R"
+format: html
+---
+
+## Quarto
+
+Jeg har ikke rørt ved BASIC i mange mange år. Jeg tror nok jeg blev 
+introduceret til det i grundskolen. Eller også var det comal. Eller noget.
+
+En oversættelse til R er jo bøvlet. Men ting der er svære er værd at gøre.
+
+Som udgangspunkt eksekveres der linie for linie. er vi færdige med linie
+10, går vi til linie 20. Der foretages dog hop. GOTO og GOSUB er dem.
+
+Så hvis vi definerer hver linie til at være sin egen funktion, og efter
+linie 10 kalder funktioenn svarende til linie 20, så får vi det.
+Hvis vi så retter disse kald til "næste funktion" til den funktion
+linien skal gå til - så kan vi modellere det. 
