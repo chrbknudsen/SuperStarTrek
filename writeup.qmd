@@ -17,3 +17,84 @@ Så hvis vi definerer hver linie til at være sin egen funktion, og efter
 linie 10 kalder funktioenn svarende til linie 20, så får vi det.
 Hvis vi så retter disse kald til "næste funktion" til den funktion
 linien skal gå til - så kan vi modellere det. 
+
+Variable er globale. og når der assignes i funktioner, skal vi derfor 
+assigne globalt.
+
+GOSUB er en særlig ting. den hopper til en linie, eksekverer den, og returnerer.
+
+Her er en liste over de forskellige variabler i BASIC-koden med angivelse af deres datatype:
+
+Z$: Tekst (string) - Bruges til at holde en strenglængde på 25 mellemrum.
+T: Tal (integer) - Repræsenterer stjernedatoen (stardate).
+T0: Tal (integer) - Initial stjernedato (stardate).
+T9: Tal (integer) - Antal dage tilbage for missionen.
+D0: Tal (integer) - Indikator for, om skibet er dokket.
+E: Tal (integer) - Energi ombord på rumskibet.
+E0: Tal (integer) - Initial energi ombord på rumskibet.
+P: Tal (integer) - Antal fotontorpedoer.
+P0: Tal (integer) - Initial antal fotontorpedoer.
+S9: Tal (integer) - Variabel brugt til at beregne Klingon-skeppets styrke.
+S: Tal (integer) - Skjoldenes nuværende energi.
+B9: Tal (integer) - Antal stjernestøttebaser i galaksen.
+K9: Tal (integer) - Antal Klingon-skepp.
+X$: Tekst (string) - Variabel til tekstmanipulation.
+X0$: Tekst (string) - Tekst, som angiver ental/flertal i udskrifter.
+Q1: Tal (integer) - Kvadrantkoordinat for Enterprise's position.
+Q2: Tal (integer) - Kvadrantkoordinat for Enterprise's position.
+S1: Tal (integer) - Sektorposition inden for kvadranten.
+S2: Tal (integer) - Sektorposition inden for kvadranten.
+A1$: Tekst (string) - Indeholdende gyldige kommandoer (f.eks. NAV, SRS osv.).
+K3: Tal (integer) - Antal Klingon-skepp i en bestemt kvadrant.
+B3: Tal (integer) - Antal stjernestøttebaser i en bestemt kvadrant.
+S3: Tal (integer) - Antal stjerner i en bestemt kvadrant.
+R1: Tal (integer) - Tilfældig variabel brugt til forskellige beregninger.
+R2: Tal (integer) - Tilfældig variabel brugt til forskellige beregninger.
+B4: Tal (integer) - Kvadrantkoordinat for en stjernestøttebase.
+B5: Tal (integer) - Sektorposition for en stjernestøttebase.
+G5: Tal (integer) - Indikator for om galakse navn skal returneres.
+D4: Tal (decimal) - Bruges til at beregne skader over tid.
+Z4: Tal (integer) - Kvadrantkoordinat for en specifik handling.
+Z5: Tal (integer) - Kvadrantkoordinat for en specifik handling.
+D1: Tal (integer) - Indikator for om skaderapport skal vises.
+D6: Tal (decimal) - Justering for skadeniveau.
+S8: Tal (integer) - Position i strengen til at indsætte tegn.
+X1: Tal (decimal) - Beregnet kursændring for rumskibet.
+X2: Tal (decimal) - Beregnet kursændring for rumskibet.
+Q4: Tal (integer) - Tidligere kvadrantkoordinat.
+Q5: Tal (integer) - Tidligere kvadrantkoordinat.
+X: Tal (decimal) - Bruges til at holde kurs eller koordinat.
+Y: Tal (decimal) - Bruges til at holde kurs eller koordinat.
+T8: Tal (decimal) - Tid tilføjet ved visse manøvrer.
+X3: Tal (integer) - Midlertidig koordinatværdi.
+Y3: Tal (integer) - Midlertidig koordinatværdi.
+Z3: Tal (integer) - Bruges til at indikere om en bestemt position er tom.
+C1: Tal (integer) - Kursinput fra brugeren.
+W1: Tal (decimal) - Bruges til at holde en beregnet værdi, ofte for kurs.
+A: Tal (decimal) - Bruges til at holde en beregnet værdi, ofte for koordinatændring.
+A$: Tekst (string) - Tekstinput fra brugeren, ofte til kommandoer.
+C$: Tekst (string) - Bruges til at beskrive skibets tilstand (f.eks. "DOCKED").
+G2$: Tekst (string) - Bruges til at holde navne på kvadranter eller enheder.
+H: Tal (integer) - Bruges til at holde styr på skadeværdier.
+H1: Tal (integer) - Bruges til at holde styr på initial skadeværdier.
+L: Tal (integer) - Loop variabel.
+O1$: Tekst (string) - Bruges til at holde en separator streng til udskrift.
+H8: Tal (integer) - Bruges som indikator for forskellige tilstande.
+I: Tal (integer) - Loop variabel.
+J: Tal (integer) - Loop variabel.
+R1: Tal (integer) - Loop variabel og bruges til valg af enhed.
+Z1: Tal (integer) - Bruges til at holde X-koordinat.
+Z2: Tal (integer) - Bruges til at holde Y-koordinat.
+C1: Tal (integer) - Kursinput eller koordinat.
+A: Tal (decimal) - Beregnet værdi for afstand eller koordinat.
+C1: Tal (integer) - Kursinput eller koordinat.
+A: Tal (decimal) - Beregnet værdi for afstand eller koordinat.
+W1: Tal (decimal) - Kurs eller koordinat.
+J0: Tal (integer) - Bruges til justering af udskriftsposition.
+Arrays (matricer):
+G(8,8): Tal (integer) - Repræsenterer hvad der findes i forskellige kvadranter (Klingons, stjerner, stjernestøttebaser).
+C(9,2): Tal (integer) - Kursdata, hvor hver række indeholder X og Y komponenter af kursen.
+K(3,3): Tal (integer) - Data om Klingon-skeppene (position og styrke).
+N(3): Tal (integer) - Midlertidig variabel, der bruges til at holde data under beregninger.
+Z(8,8): Tal (integer) - Bruges til at holde en kopi af hvad der er i hver kvadrant.
+D(8): Tal (decimal) - Repræsenterer status for forskellige systemer (skader/reparationer).
