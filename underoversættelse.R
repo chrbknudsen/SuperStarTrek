@@ -6,7 +6,7 @@
 
 # HUSK OGSÅ AT TJEKKE OVERSÆTTELSEN AF VARIABEL NAVNE!!!!
 
-# 1300 linier mangler.
+# 1227 linier mangler.
 
 ## HERFRA SKER DER ANDET IGEN ------
 
@@ -15,8 +15,8 @@
 
 ## HERUNDER HAR VI TING. DER ER EN GOSUB TIL LINIE 1320
 
-f_1310 <- function(){ 
-  # 1310 REM HERE ANY TIME NEW QUADRANT ENTERED 
+f_1320 <- function(){ 
+  #1310 REM HERE ANY TIME NEW QUADRANT ENTERED 
   #1320 Z4=Q1:Z5=Q2:K3=0:B3=0:S3=0:G5=0:D4=.5*RND(1):Z(Q1,Q2)=G(Q1,Q2) 
   f_1390()
 }
@@ -101,20 +101,8 @@ f_1990 <- function(){
   #1990 IFS+E>10THENIFE>10ORD(7)=0THEN2060 
   f_2020()
 }
-f_2020 <- function(){ 
-  #2020 PRINT:PRINT"** FATAL ERROR **   YOU'VE JUST STRANDED YOUR SHIP IN " 
-  print("")
-  print("** FATAL ERROR **   YOU'VE JUST STRANDED YOUR SHIP IN ")
-  #2030 PRINT"SPACE":PRINT"YOU HAVE INSUFFICIENT MANEUVERING ENERGY,";
-  print("SPACE")
-  print("YOU HAVE INSUFFICIENT MANEUVERING ENERGY,")
-  #2040 PRINT" AND SHIELD CONTROL":PRINT"IS PRESENTLY INCAPABLE OF CROSS";
-  print(" AND SHIELD CONTROL")
-  print("IS PRESENTLY INCAPABLE OF CROSS")
-  #2050 PRINT"-CIRCUITING TO ENGINE ROOM!!":GOTO6220 
-  print("-CIRCUITING TO ENGINE ROOM!!")
-  f_6220()
-}
+
+
 f_2060 <- function(){ 
   # INPUT"COMMAND";A$ 
   f_2080()
@@ -128,50 +116,26 @@ f_2140 <- function(){
   f_2160()
 }
 f_2160 <- function(){ 
-  # NEXTI:PRINT"ENTER ONE OF THE FOLLOWING:" 
+  #2160 NEXTI:PRINT"ENTER ONE OF THE FOLLOWING:" 
   f_2180()
 }
+
+
 f_2180 <- function(){ 
-  # PRINT"  NAV  (TO SET COURSE)" 
-  f_2190()
+  #2180 PRINT"  NAV  (TO SET COURSE)" 
+  #2190 PRINT"  SRS  (FOR SHORT RANGE SENSOR SCAN)" 
+  #2200 PRINT"  LRS  (FOR LONG RANGE SENSOR SCAN)" 
+  #2210 PRINT"  PHA  (TO FIRE PHASERS)" 
+  #2220 PRINT"  TOR  (TO FIRE PHOTON TORPEDOES)" 
+  #2230 PRINT"  SHE  (TO RAISE OR LOWER SHIELDS)" 
+  #2240 PRINT"  DAM  (FOR DAMAGE CONTROL REPORTS)" 
+  #2250 PRINT"  COM  (TO CALL ON LIBRARY-COMPUTER)" 
+  #2260 PRINT"  XXX  (TO RESIGN YOUR COMMAND)":PRINT:GOTO 1990 
+  # denne går ikke videre til næste linie
 }
-f_2190 <- function(){ 
-  # PRINT"  SRS  (FOR SHORT RANGE SENSOR SCAN)" 
-  f_2200()
-}
-f_2200 <- function(){ 
-  # PRINT"  LRS  (FOR LONG RANGE SENSOR SCAN)" 
-  f_2210()
-}
-f_2210 <- function(){ 
-  # PRINT"  PHA  (TO FIRE PHASERS)" 
-  f_2220()
-}
-f_2220 <- function(){ 
-  # PRINT"  TOR  (TO FIRE PHOTON TORPEDOES)" 
-  f_2230()
-}
-f_2230 <- function(){ 
-  # PRINT"  SHE  (TO RAISE OR LOWER SHIELDS)" 
-  f_2240()
-}
-f_2240 <- function(){ 
-  # PRINT"  DAM  (FOR DAMAGE CONTROL REPORTS)" 
-  f_2250()
-}
-f_2250 <- function(){ 
-  # PRINT"  COM  (TO CALL ON LIBRARY-COMPUTER)" 
-  f_2260()
-}
-f_2260 <- function(){ 
-  # PRINT"  XXX  (TO RESIGN YOUR COMMAND)":PRINT:GOTO 1990 
-  f_2290()
-}
-f_2290 <- function(){ 
-  # REM COURSE CONTROL BEGINS HERE 
-  f_2300()
-}
+
 f_2300 <- function(){ 
+  #2290 REM COURSE CONTROL BEGINS HERE 
   # INPUT"COURSE (0-9)";C1:IFC1=9THENC1=1 
   f_2310()
 }
@@ -425,7 +389,6 @@ f_3860 <- function(){
 }
 f_3870 <- function(){ 
   #3870 T=T+1:GOSUB3910:GOTO1320 
-  # vi omdøber 1320 til 1310, så det er GOTO1310 i stedet
   f_3900()
 }
 f_3900 <- function(){ 
@@ -828,39 +791,40 @@ f_6090 <- function(){
   f_6100()
 }
 f_6100 <- function(){ 
-  # PRINT"      <SHIELDS DOWN TO";S;"UNITS>":IFH<20THEN6200 
+  #6100 PRINT"      <SHIELDS DOWN TO";S;"UNITS>":IFH<20THEN6200 
   f_6120()
 }
 f_6120 <- function(){ 
-  # IFRND(1)>.6ORH/S<=.02THEN6200 
+  #6120 IFRND(1)>.6ORH/S<=.02THEN6200 
   f_6140()
 }
 f_6140 <- function(){ 
-  # R1=FNR(1):D(R1)=D(R1)-H/S-.5*RND(1):GOSUB8790 
+  #6140 R1=FNR(1):D(R1)=D(R1)-H/S-.5*RND(1):GOSUB8790 
   f_6170()
 }
 f_6170 <- function(){ 
-  # PRINT"DAMAGE CONTROL REPORTS ";G2$;" DAMAGED BY THE HIT'" 
+  #6170 PRINT"DAMAGE CONTROL REPORTS ";G2$;" DAMAGED BY THE HIT'" 
   f_6200()
 }
 f_6200 <- function(){ 
-  # NEXTI:RETURN 
+  #6200 NEXTI:RETURN 
   f_6210()
 }
 f_6210 <- function(){ 
-  # REM END OF GAME 
+  #6210 REM END OF GAME 
   f_6220()
 }
 f_6220 <- function(){ 
-  # PRINT"IT IS STARDATE";T:GOTO 6270 
+  ## Denne funktion kaldes fra f_2020
+  #6220 PRINT"IT IS STARDATE";T:GOTO 6270 
   f_6240()
 }
 f_6240 <- function(){ 
-  # PRINT:PRINT"THE ENTERPRISE HAS BEEN DESTROYED.  THEN FEDERATION "; 
+  #6240 PRINT:PRINT"THE ENTERPRISE HAS BEEN DESTROYED.  THEN FEDERATION "; 
   f_6250()
 }
 f_6250 <- function(){ 
-  # PRINT"WILL BE CONQUERED":GOTO 6220 
+  #6250 PRINT"WILL BE CONQUERED":GOTO 6220 
   f_6270()
 }
 f_6270 <- function(){ 
