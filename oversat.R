@@ -1,3 +1,13 @@
+## funktioner der kommer fra basic, og skal reproduceres i R.
+
+LEFT <- function(string, n) {
+  substring(string, 1, n)
+}
+
+RIGHT <- function(string, n) {
+  substring(string, nchar(string) - n + 1, nchar(string))
+}
+
 
 ## introducerende kommentarer og kontaktoplysninger
 f_0010 <- function(){ 
@@ -231,3 +241,142 @@ f_1230 <- function(){
   
   f_1310()
 }
+
+
+## efter linie 8580 ---------------
+
+f_8590 <- function(){ 
+  #8580 REM FIND EMPTY PLACE IN QUADRANT (FOR THINGS) 
+  #8590 R1=FNR(1):R2=FNR(1):A$="   ":Z1=R1:Z2=R2:GOSUB8830:IFZ3=0THEN8590 
+  #8600 RETURN 
+  # denne linie sender ikke noget videre til næste linie
+  
+  R1 <<- FNR(1)
+  R2 <<- FNR(1)
+  AT <<- "   "
+  Z1 <<- R1
+  Z2 <<- R2
+  f_8830()
+  if (Z3 == 0) f_8590()
+  
+}
+
+
+
+
+
+
+f_8790 <- function(){ 
+  #8780 REM PRINTS DEVICE NAME 
+  #8790 ONR1GOTO8792,8794,8796,8798,8800,8802,8804,8806 
+  #8792 G2$="WARP ENGINES":RETURN 
+  #8794 G2$="SHORT RANGE SENSORS":RETURN 
+  #8796 G2$="LONG RANGE SENSORS":RETURN 
+  #8798 G2$="PHASER CONTROL":RETURN 
+  #8800 G2$="PHOTON TUBES":RETURN 
+  #8802 G2$="DAMAGE CONTROL":RETURN 
+  #8804 G2$="SHIELD CONTROL":RETURN 
+  #8806 G2$="LIBRARY-COMPUTER":RETURN 
+  G2T <<- switch(as.character(R1),
+                 "1" = "WARP ENGINES",
+                 "2" = "SHORT RANGE SENSORS",
+                 "3" = "LONG RANGE SENSORS",
+                 "4" = "PHASER CONTROL",
+                 "5" = "PHOTON TUBES",
+                 "6" = "DAMAGE CONTROL",
+                 "7" = "SHIELD CONTROL",
+                 "8" = "LIBRARY-COMPUTER",
+                 stop("Invalid R1 value"))
+}
+
+f_8830 <- function(){ 
+  #8820 REM STRING COMPARISON IN QUADRANT ARRAY 
+  #8830 Z1=INT(Z1+.5):Z2=INT(Z2+.5):S8=(Z2-1)*3+(Z1-1)*24+1:Z3=0 
+  #8890 IFMID$(Q$,S8,3)<>A$THENRETURN 
+  #8900 Z3=1:RETURN 
+  # denne linie fortsætter ikke på næste funktion, men returnerer.
+  Z1 <<- as.integer(Z1 + 0.5)
+  Z2 <<- as.integer(Z2 + 0.5)
+  S8 <<- (Z2 - 1) * 3 + (Z1 - 1) * 24 + 1
+  Z3 <<- 0
+  
+  # Kontrollerer om den del af QT, der starter ved S8, er forskellig fra AText
+  if (substring(QT, S8, S8 + 2) != AText) {
+    return()  # Afslut funktionen, hvis betingelsen er opfyldt
+  }
+  
+  Z3 <<- 1
+}
+
+## efter linie 9010 ------
+
+f_9030 <- function(){ 
+  # Funktion til at finde kvadrantens navn baseret på Z4 og Z5
+  
+  # REM QUADRANT NAME IN G2$ FROM Z4,Z5 (=Q1,Q2) 
+  # REM CALL WITH G5=1 TO GET REGION NAME ONLY 
+  # IFZ5<=4THENONZ4GOTO9040,9050,9060,9070,9080,9090,9100,9110 
+  # GOTO9120 
+  # G2$="ANTARES":GOTO9210 
+  
+  # G2$="RIGEL":GOTO9210 
+  # G2$="PROCYON":GOTO9210 
+  
+  # G2$="VEGA":GOTO9210 
+  # G2$="CANOPUS":GOTO9210 
+  # G2$="ALTAIR":GOTO9210 
+  # G2$="SAGITTARIUS":GOTO9210 
+  # G2$="POLLUX":GOTO9210 
+  # ONZ4GOTO9130,9140,9150,9160,9170,9180,9190,9200 
+  # G2$="SIRIUS":GOTO9210 
+  # G2$="DENEB":GOTO9210 
+  # G2$="CAPELLA":GOTO9210 
+  # G2$="BETELGEUSE":GOTO9210 
+  # G2$="ALDEBARAN":GOTO9210 
+  # G2$="REGULUS":GOTO9210 
+  # G2$="ARCTURUS":GOTO9210 
+  # G2$="SPICA" 
+  # IFG5<>1THENONZ5GOTO9230,9240,9250,9260,9230,9240,9250,9260 
+  # RETURN 
+  # G2$=G2$+" I":RETURN 
+  # G2$=G2$+" II":RETURN 
+  # G2$=G2$+" III":RETURN 
+  # G2$=G2$+" IV":RETURN 
+  
+  # Første del af betingelsen (hvis Z5 <= 4)
+  G2T <<- if (Z5 <= 4) {
+    switch(Z4,
+           "1" = "ANTARES",
+           "2" = "RIGEL",
+           "3" = "PROCYON",
+           "4" = "VEGA",
+           "5" = "CANOPUS",
+           "6" = "ALTAIR",
+           "7" = "SAGITTARIUS",
+           "8" = "POLLUX",
+           "")
+  } else {
+    # Anden del af betingelsen (hvis Z5 > 4)
+    switch(Z4,
+           "1" = "SIRIUS",
+           "2" = "DENEB",
+           "3" = "CAPELLA",
+           "4" = "BETELGEUSE",
+           "5" = "ALDEBARAN",
+           "6" = "REGULUS",
+           "7" = "ARCTURUS",
+           "8" = "SPICA",
+           "")
+  }
+  
+  # Ekstra betingelse for at tilføje romertal
+  if (G5 != 1) {
+    G2T <<- paste0(G2T, switch(Z5,
+                               "1" = " I",
+                               "2" = " II",
+                               "3" = " III",
+                               "4" = " IV",
+                               ""))
+  }
+}
+

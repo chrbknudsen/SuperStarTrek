@@ -6,7 +6,7 @@
 
 # HUSK OGSÅ AT TJEKKE OVERSÆTTELSEN AF VARIABEL NAVNE!!!!
 
-# 1335 linier mangler.
+# 1300 linier mangler.
 
 ## HERFRA SKER DER ANDET IGEN ------
 
@@ -111,11 +111,9 @@ f_2020 <- function(){
   #2040 PRINT" AND SHIELD CONTROL":PRINT"IS PRESENTLY INCAPABLE OF CROSS";
   print(" AND SHIELD CONTROL")
   print("IS PRESENTLY INCAPABLE OF CROSS")
-  f_2050()
-}
-f_2050 <- function(){ 
-  # PRINT"-CIRCUITING TO ENGINE ROOM!!":GOTO6220 
-  f_2060()
+  #2050 PRINT"-CIRCUITING TO ENGINE ROOM!!":GOTO6220 
+  print("-CIRCUITING TO ENGINE ROOM!!")
+  f_6220()
 }
 f_2060 <- function(){ 
   # INPUT"COMMAND";A$ 
@@ -447,11 +445,13 @@ f_3940 <- function(){
   f_3980()
 }
 f_3980 <- function(){ 
-  # RETURN 
-  f_3990()
+  #3980 RETURN 
+  #denne linie returnerer, og fortsætter ikke på næste linie
 }
+
+
 f_3990 <- function(){ 
-  # REM LONG RANGE SENSOR SCAN CODE 
+  #3990 REM LONG RANGE SENSOR SCAN CODE 
   f_4000()
 }
 f_4000 <- function(){ 
@@ -483,29 +483,31 @@ f_4210 <- function(){
   f_4230()
 }
 f_4230 <- function(){ 
-  # NEXTL:PRINT":":PRINTO1$:NEXTI:GOTO1990 
-  f_4250()
+  #4230 NEXTL:PRINT":":PRINTO1$:NEXTI:GOTO1990 
+  # dette går ikke videre til næste linie, men til 1990
 }
+
 f_4250 <- function(){ 
-  # REM PHASER CONTROL CODE BEGINS HERE 
+  #4250 REM PHASER CONTROL CODE BEGINS HERE 
   f_4260()
 }
 f_4260 <- function(){ 
-  # IFD(4)<0THENPRINT"PHASERS INOPERATIVE":GOTO1990 
+  #4260 IFD(4)<0THENPRINT"PHASERS INOPERATIVE":GOTO1990 
   f_4265()
 }
 f_4265 <- function(){ 
-  # IFK3>0THEN4330 
+  #4265 IFK3>0THEN4330 
   f_4270()
 }
 f_4270 <- function(){ 
-  # PRINT"SCIENCE OFFICER SPOCK REPORTS  'SENSORS SHOW NO ENEMY SHIPS" 
+  #4270 PRINT"SCIENCE OFFICER SPOCK REPORTS  'SENSORS SHOW NO ENEMY SHIPS" 
   f_4280()
 }
 f_4280 <- function(){ 
-  # PRINT"                                IN THIS QUADRANT'":GOTO1990 
-  f_4330()
+  #4280 PRINT"                                IN THIS QUADRANT'":GOTO1990 
+  #Dette går ikke videre til næste linie, men til 1990
 }
+
 f_4330 <- function(){ 
   # IFD(8)<0THENPRINT"COMPUTER FAILURE HAMPERS ACCURACY" 
   f_4350()
@@ -548,7 +550,7 @@ f_4530 <- function(){
 }
 f_4550 <- function(){ 
   # PRINTK(I,2):IFK(I,3)<=0THENPRINT"*** KLINGON DESTROYED ***":GOTO4580 
-  f_4560()
+  # dette går ikke videre til næste linie, men til 4580
 }
 f_4560 <- function(){ 
   # PRINT"   (SENSORS SHOW";K(I,3);"UNITS REMAINING)":GOTO4670 
@@ -730,6 +732,8 @@ f_5660 <- function(){
   # PRINT"  'SHIELDS NOW AT";INT(S);"UNITS PER YOUR COMMAND.'":GOTO1990 
   f_5680()
 }
+
+
 f_5680 <- function(){ 
   # REM DAMAGE CONTROL 
   f_5690()
@@ -792,8 +796,9 @@ f_5950 <- function(){
 }
 f_5980 <- function(){ 
   # GOTO 1990 
-  f_5990()
+  # Går ikke til næste linie, men til 1990
 }
+
 f_5990 <- function(){ 
   # REM KLINGONS SHOOTING 
   f_6000()
@@ -867,6 +872,7 @@ f_6280 <- function(){
   f_6290()
 }
 f_6290 <- function(){ 
+  ## kaldes som funktion
   # PRINT:PRINT:IFB9=0THEN6360 
   f_6310()
 }
@@ -874,35 +880,28 @@ f_6310 <- function(){
   # PRINT"THE FEDERATION IS IN NEED OF A NEW STARSHIP COMMANDER" 
   f_6320()
 }
+
 f_6320 <- function(){ 
   # PRINT"FOR A SIMILAR MISSION -- IF THERE IS A VOLUNTEER," 
-  f_6330()
-}
-f_6330 <- function(){ 
   # INPUT"LET HIM STEP FORWARD AND ENTER 'AYE'";A$:IFA$="AYE"THEN10 
   f_6360()
 }
 f_6360 <- function(){ 
-  # END 
-  f_6370()
+  #6360 END 
+  ## programmet er slut!
 }
+
 f_6370 <- function(){ 
-  # PRINT"CONGRULATION, CAPTAIN!  THEN LAST KLINGON BATTLE CRUISER" 
-  f_6380()
+  #6370 PRINT"CONGRULATION, CAPTAIN!  THEN LAST KLINGON BATTLE CRUISER" 
+  #6380 PRINT"MENACING THE FDERATION HAS BEEN DESTROYED.":PRINT 
+  #6400 PRINT"YOUR EFFICIENCY RATING IS";1000*(K7/(T-T0))^2:GOTO6290 
+  ## dette går ikke videre til næste linie
 }
-f_6380 <- function(){ 
-  # PRINT"MENACING THE FDERATION HAS BEEN DESTROYED.":PRINT 
-  f_6400()
-}
-f_6400 <- function(){ 
-  # PRINT"YOUR EFFICIENCY RATING IS";1000*(K7/(T-T0))^2:GOTO6290 
-  f_6420()
-}
-f_6420 <- function(){ 
-  # REM SHORT RANGE SENSOR SCAN & STARTUP SUBROUTINE 
-  f_6430()
-}
+
+
+
 f_6430 <- function(){ 
+  #6420 REM SHORT RANGE SENSOR SCAN & STARTUP SUBROUTINE 
   # FORI=S1-1TOS1+1:FORJ=S2-1TOS2+1 
   f_6450()
 }
@@ -1100,44 +1099,33 @@ f_7800 <- function(){
 }
 f_7850 <- function(){ 
   # PRINT:PRINTO1$:NEXTI:PRINT:GOTO1990 
-  f_7890()
+  ## her går vi ikke videre til næste linie
 }
-f_7890 <- function(){ 
-  # REM STATUS REPORT 
-  f_7900()
-}
+
+
 f_7900 <- function(){ 
-  # PRINT "   STATUS REPORT:":X$="":IFK9>1THENX$="S" 
-  f_7940()
+  #7890 REM STATUS REPORT 
+  #7900 PRINT "   STATUS REPORT:":X$="":IFK9>1THENX$="S" 
+  #7940 PRINT"KLINGON";X$;" LEFT: ";K9 
+  #7960 PRINT"MISSION MUST BE COMPLETED IN";.1*INT((T0+T9-T)*10);"STARDATES" 
+  #7970 X$="S":IFB9<2THENX$="":IFB9<1THEN8010 
+  #7980 PRINT"THE FEDERATION IS MAINTAINING";B9;"STARBASE";X$;" IN THE GALAXY" 
+  #7990 GOTO5690 
+  ## Denne linie går ikke videre til næste linie.
 }
-f_7940 <- function(){ 
-  # PRINT"KLINGON";X$;" LEFT: ";K9 
-  f_7960()
-}
-f_7960 <- function(){ 
-  # PRINT"MISSION MUST BE COMPLETED IN";.1*INT((T0+T9-T)*10);"STARDATES" 
-  f_7970()
-}
-f_7970 <- function(){ 
-  # X$="S":IFB9<2THENX$="":IFB9<1THEN8010 
-  f_7980()
-}
-f_7980 <- function(){ 
-  # PRINT"THE FEDERATION IS MAINTAINING";B9;"STARBASE";X$;" IN THE GALAXY" 
-  f_7990()
-}
-f_7990 <- function(){ 
-  # GOTO5690 
-  f_8010()
-}
+
+
+
 f_8010 <- function(){ 
   # PRINT"YOUR STUPIDITY HAS LEFT YOU ON YOUR ON IN" 
   f_8020()
 }
 f_8020 <- function(){ 
   # PRINT"  THE GALAXY -- YOU HAVE NO STARBASES LEFT!":GOTO5690 
-  f_8060()
+  ## denne linie går ikke videre til næste linie
 }
+
+
 f_8060 <- function(){ 
   # REM TORPEDO, BASE NAV, D/D CALCULATOR 
   f_8070()
@@ -1251,85 +1239,25 @@ f_8500 <- function(){
   f_8510()
 }
 f_8510 <- function(){ 
-  # PRINT"MR. SPOCK REPORTS,  'SENSORS SHOW NO STARBASES IN THIS"; 
-  f_8520()
+  #8510 PRINT"MR. SPOCK REPORTS,  'SENSORS SHOW NO STARBASES IN THIS"; 
+  #8520 PRINT" QUADRANT.'":GOTO1990 
+  ## denne funktion går videre til linie 1990, og ikke næstelinie.
 }
-f_8520 <- function(){ 
-  # PRINT" QUADRANT.'":GOTO1990 
-  f_8580()
-}
-f_8580 <- function(){ 
-  # REM FIND EMPTY PLACE IN QUADRANT (FOR THINGS) 
-  f_8590()
-}
-f_8590 <- function(){ 
-  # R1=FNR(1):R2=FNR(1):A$="   ":Z1=R1:Z2=R2:GOSUB8830:IFZ3=0THEN8590 
-  f_8600()
-}
-f_8600 <- function(){ 
-  # RETURN 
-  f_8660()
-}
-f_8660 <- function(){ 
-  # REM INSERT IN STRING ARRAY FOR QUADRANT 
-  f_8670()
-}
+
+
+
+
 f_8670 <- function(){ 
-  # S8=INT(Z2-.5)*3+INT(Z1-.5)*24+1 
-  f_8675()
-}
-f_8675 <- function(){ 
-  # IF LEN(A$)<>3THEN PRINT"ERROR":STOP 
-  f_8680()
-}
-f_8680 <- function(){ 
-  # IFS8=1THENQ$=A$+RIGHT$(Q$,189):RETURN 
-  f_8690()
-}
-f_8690 <- function(){ 
-  # IFS8=190THENQ$=LEFT$(Q$,189)+A$:RETURN 
-  f_8700()
-}
-f_8700 <- function(){ 
-  # Q$=LEFT$(Q$,S8-1)+A$+RIGHT$(Q$,190-S8):RETURN 
-  f_8790()
-}
+  #8660 REM INSERT IN STRING ARRAY FOR QUADRANT 
+  #8670 S8=INT(Z2-.5)*3+INT(Z1-.5)*24+1 
+  #8675 IF LEN(A$)<>3THEN PRINT"ERROR":STOP 
+  #8680 IFS8=1THENQ$=A$+RIGHT$(Q$,189):RETURN 
+  #8690 IFS8=190THENQ$=LEFT$(Q$,189)+A$:RETURN 
+  #8700 Q$=LEFT$(Q$,S8-1)+A$+RIGHT$(Q$,190-S8):RETURN 
+  # denne linie kode sender ikke videre til næste linie.
+
+  ## NB LEFT$ OG RIGHT$ ER FUNKTIONER!!!!
+  ## De er defineret som LEFT() og RIGHT()
+  }
 
 
-f_8790 <- function(){ 
-  #8780 REM PRINTS DEVICE NAME 
-  #8790 ONR1GOTO8792,8794,8796,8798,8800,8802,8804,8806 
-  f_8792()
-}
-f_8792 <- function(){ 
-  #8792 G2$="WARP ENGINES":RETURN 
-  f_8794()
-}
-f_8794 <- function(){ 
-  #8794 G2$="SHORT RANGE SENSORS":RETURN 
-  f_8796()
-}
-f_8796 <- function(){ 
-  #8796 G2$="LONG RANGE SENSORS":RETURN 
-  f_8798()
-}
-f_8798 <- function(){ 
-  #8798 G2$="PHASER CONTROL":RETURN 
-  f_8800()
-}
-f_8800 <- function(){ 
-  #8800 G2$="PHOTON TUBES":RETURN 
-  f_8802()
-}
-f_8802 <- function(){ 
-  #8802 G2$="DAMAGE CONTROL":RETURN 
-  f_8804()
-}
-f_8804 <- function(){ 
-  #8804 G2$="SHIELD CONTROL":RETURN 
-  f_8806()
-}
-f_8806 <- function(){ 
-  #8806 G2$="LIBRARY-COMPUTER":RETURN 
-  f_8830()
-}

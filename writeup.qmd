@@ -5,6 +5,10 @@ format: html
 
 ## Quarto
 
+https://medium.com/swlh/code-archaeology-with-super-star-trek-928101eb010c
+
+
+
 Jeg har ikke rørt ved BASIC i mange mange år. Jeg tror nok jeg blev 
 introduceret til det i grundskolen. Eller også var det comal. Eller noget.
 
@@ -61,6 +65,7 @@ Her er en liste over de forskellige variabler i BASIC-koden med angivelse af der
 | O1$          |  O1T     | Tekst (string) - Bruges til at holde en separator streng til udskrift. |
 | P            |          | Tal (integer) - Antal fotontorpedoer.                              |
 | P0           |          | Tal (integer) - Initial antal fotontorpedoer.                      |
+| Q$           |  QT      | en sammensat streng.                                               |
 | Q1           |          | Tal (integer) - Kvadrantkoordinat for Enterprise's position.       |
 | Q2           |          | Tal (integer) - Kvadrantkoordinat for Enterprise's position.       |
 | Q4           |          | Tal (integer) - Tidligere kvadrantkoordinat.                       |
