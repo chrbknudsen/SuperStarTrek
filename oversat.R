@@ -239,8 +239,40 @@ f_1230 <- function(){
   #1300 I=RND(1):REM IF INP(1)=13 THEN 1300 
   Ii <<- runif(1)
   
-  f_1310()
+  f_1320()
 }
+
+
+f_1320 <- function(){ 
+  ## denne funktion kaldes fra linie 3910
+  #1310 REM HERE ANY TIME NEW QUADRANT ENTERED 
+  #1320 Z4=Q1:Z5=Q2:K3=0:B3=0:S3=0:G5=0:D4=.5*RND(1):Z(Q1,Q2)=G(Q1,Q2) 
+  # IFQ1<1ORQ1>8ORQ2<1ORQ2>8THEN1600
+  Z4 <<- Q1
+  Z5 <<- Q2
+  K3 <<- 0
+  B3 <<- 0
+  S3 <<- 0
+  G5 <<- 0
+  D4 <<- 0.5 * runif(1)  # RND(1) i BASIC svarer til runif(1) i R for tilfældig værdi mellem 0 og 1
+  Z[Q1, Q2] <<- G[Q1, Q2]
+  
+  # Tjek betingelsen og kald funktionen f_1600() hvis betingelsen er sand
+  if (Q1 < 1 || Q1 > 8 || Q2 < 1 || Q2 > 8) {
+    f_1600()
+  }else f_1430()
+}
+
+f_1430 <- function(){ 
+  #1430 GOSUB 9030:PRINT:IF T0<>T THEN 1490 
+  f_9030()
+  print("")
+  if(T0 != Ti){f_1490()}else{
+    f_1460()}
+}
+
+
+
 
 
 f_2020 <- function(){ 

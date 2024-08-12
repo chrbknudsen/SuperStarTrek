@@ -15,49 +15,32 @@
 
 ## HERUNDER HAR VI TING. DER ER EN GOSUB TIL LINIE 1320
 
-f_1320 <- function(){ 
-  #1310 REM HERE ANY TIME NEW QUADRANT ENTERED 
-  #1320 Z4=Q1:Z5=Q2:K3=0:B3=0:S3=0:G5=0:D4=.5*RND(1):Z(Q1,Q2)=G(Q1,Q2) 
-  f_1390()
-}
-f_1390 <- function(){ 
-  # IFQ1<1ORQ1>8ORQ2<1ORQ2>8THEN1600 
-  f_1430()
-}
-f_1430 <- function(){ 
-  # GOSUB 9030:PRINT:IF T0<>T THEN 1490 
-  f_1460()
-}
+
+
 f_1460 <- function(){ 
-  # PRINT"YOUR MISSION BEGINS WITH YOUR STARSHIP LOCATED" 
-  f_1470()
-}
-f_1470 <- function(){ 
-  # PRINT"IN THE GALACTIC QUADRANT, '";G2$;"'.":GOTO 1500 
+  #1460 PRINT"YOUR MISSION BEGINS WITH YOUR STARSHIP LOCATED" 
+  #1470 PRINT"IN THE GALACTIC QUADRANT, '";G2$;"'.":GOTO 1500 
   f_1490()
 }
 f_1490 <- function(){ 
+  ## denne linie kaldes andet steds fra
   # PRINT"NOW ENTERING ";G2$;" QUADRANT . . ." 
   f_1500()
 }
 f_1500 <- function(){ 
-  # PRINT:K3=INT(G(Q1,Q2)*.01):B3=INT(G(Q1,Q2)*.1)-10*K3 
-  f_1540()
-}
-f_1540 <- function(){ 
-  # S3=G(Q1,Q2)-100*K3-10*B3:IFK3=0THEN1590 
+  ## denne linie kaldes andetsteds fra
+  #1500 PRINT:K3=INT(G(Q1,Q2)*.01):B3=INT(G(Q1,Q2)*.1)-10*K3 
+  #1540 S3=G(Q1,Q2)-100*K3-10*B3:IFK3=0THEN1590 
   f_1560()
 }
 f_1560 <- function(){ 
-  # PRINT"COMBAT AREA      CONDITION RED":IFS>200THEN1590 
-  f_1580()
-}
-f_1580 <- function(){ 
-  # PRINT"   SHIELDS DANGEROUSLY LOW" 
+  #1560 PRINT"COMBAT AREA      CONDITION RED":IFS>200THEN1590 
+  #1580 PRINT"   SHIELDS DANGEROUSLY LOW" 
   f_1590()
 }
 f_1590 <- function(){ 
-  # FORI=1TO3:K(I,1)=0:K(I,2)=0:NEXTI 
+  ## denne linie kaldes andetstedsfra men kun fra de umiddelbart foregående.
+  #1590 FORI=1TO3:K(I,1)=0:K(I,2)=0:NEXTI 
   f_1600()
 }
 f_1600 <- function(){ 
@@ -67,26 +50,15 @@ f_1600 <- function(){
 f_1660 <- function(){ 
   #1660 REM POSITION ENTERPRISE IN QUADRANT, THEN PLACE "K3" KLINGONS, & 
   #1670 REM "B3" STARBASES, & "S3" STARS ELSEWHERE. 
-  f_1680()
-}
-f_1680 <- function(){ 
   # A$="<*>":Z1=S1:Z2=S2:GOSUB8670:IFK3<1THEN1820 
-  f_1720()
-}
-f_1720 <- function(){ 
   # FORI=1TOK3:GOSUB8590:A$="+K+":Z1=R1:Z2=R2 
-  f_1780()
-}
-f_1780 <- function(){ 
   # GOSUB8670:K(I,1)=R1:K(I,2)=R2:K(I,3)=S9*(0.5+RND(1)):NEXTI 
   f_1820()
 }
 f_1820 <- function(){ 
-  # IFB3<1THEN1910 
-  f_1880()
-}
-f_1880 <- function(){ 
-  # GOSUB8590:A$=">!<":Z1=R1:B4=R1:Z2=R2:B5=R2:GOSUB8670 
+  # denne linie kaldes tidligere
+  #1820 IFB3<1THEN1910 
+  # 1880 GOSUB8590:A$=">!<":Z1=R1:B4=R1:Z2=R2:B5=R2:GOSUB8670 
   f_1910()
 }
 f_1910 <- function(){ 
